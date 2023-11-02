@@ -4,8 +4,8 @@ from nss_handler import status
 from repository import db_get_single, db_get_all
 class MetalsView():
 
-    def get(self, handler, pk, url):
-        if pk != 0:
+    def get(self, handler, pk):
+8        if pk != 0:
             sql = """ SELECT m.id, m.metal, m.price FROM Metal m WHERE m.id = ?"""
             query_results = db_get_single(sql, pk)
             serialized_metal = json.dumps(dict(query_results))
